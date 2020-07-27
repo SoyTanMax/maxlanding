@@ -22,13 +22,13 @@
         <div class="navbar-end">
             <ul class="navbar-item">
                 <router-link :to="{ name: 'Home'}">
-                    <li>Home</li>
+                    <li class="cool-link">Home</li>
                 </router-link>
                 <router-link :to="{ name: ''}">
-                    <li>Case Studies</li>
+                    <li class="cool-link">Case Studies</li>
                 </router-link>
                 <router-link :to="{ name: ''}">
-                    <li>About me</li>
+                    <li class="cool-link">About me</li>
                 </router-link>
                 <router-link :to="{ name: ''}">
                     <button class="button">Contact</button>
@@ -82,4 +82,22 @@ export default {
         color: white;
         border: none;
     }
+    .cool-link::after{
+      content:'';
+      display:block;
+      width: 0;
+      height: 2px;
+      background: #3173B4;
+      transition: width .3s;
+      border-radius: 1px;
+    }
+    .cool-link:hover:after{
+      width: 100%;
+      transition: width .3s;
+    }
+    @media screen and (max-width: 1024px) {
+    .navbar-item{
+      padding-top: 0;
+    }
+  }
 </style>
