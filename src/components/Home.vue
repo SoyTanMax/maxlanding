@@ -40,7 +40,6 @@
         <div class="column">
           <vue-video-section
             :elementId="'header-background-video'"
-            :ref="'header-background-video'"
             :mp4Source="require('@/assets/vidio.mp4')"
             :mobileBreakpoint="769"
             :desktopHeight="370"
@@ -50,6 +49,7 @@
             :autoplay="true"
             :autobuffer="true"
             :muted="true"
+            :style="{'border-radius':'10px'}"
             >
           </vue-video-section>
         </div>
@@ -59,6 +59,7 @@
       <p class="has-text-centered experiments is-size-3">Experiments</p>
       <Card/>
     </div>
+    <Footer/>
   </div>
 </template>
 
@@ -67,13 +68,15 @@ import Navbar from '@/components/Navbar'
 import UI from '@/components/UI'
 import Grid from '@/components/Grid'
 import Card from '@/components/Card'
+import Footer from '@/components/Footer'
 export default {
   name: 'Home',
   components: {
     Navbar,
     UI,
     Grid,
-    Card
+    Card,
+    Footer
   },
   data () {
     return {
